@@ -123,15 +123,15 @@
 # else:
 #     print("Nope!")
 
-# Домашняя практика 2
-# * Ввести с клавиатуры число и цифру
-# * Определить: входит ли цифра в число
-
-num = int(input('Число > '))
-find_num = int(input('Цифра > '))
-num_as_list = [int(s) for s in list(str(num))]
-
-if find_num in num_as_list:
-    print('Yep!')
-else:
-    print("Nope!")
+# # Домашняя практика 2
+# # * Ввести с клавиатуры число и цифру
+# # * Определить: входит ли цифра в число
+#
+# num = int(input('Число > '))
+# find_num = int(input('Цифра > '))
+# num_as_list = [int(s) for s in list(str(num))]
+#
+# if find_num in num_as_list:
+#     print('Yep!')
+# else:
+#     print("Nope!")
