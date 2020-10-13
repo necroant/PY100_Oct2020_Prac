@@ -110,13 +110,26 @@
 #
 # print(num_)
 
-# Домашняя практика
-# * Дано двухзначное число. Определить: входит ли в него цифра 5.
+# # Домашняя практика
+# # * Дано двухзначное число. Определить: входит ли в него цифра 5.
+#
+# num = 23
+# find_num = 5
+# num_as_list = [int(s) for s in list(str(num))]
+# # print(num_as_list)
+#
+# if find_num in num_as_list:
+#     print('Yep!')
+# else:
+#     print("Nope!")
 
-num = 23
-find_num = 5
+# Домашняя практика 2
+# * Ввести с клавиатуры число и цифру
+# * Определить: входит ли цифра в число
+
+num = int(input('Число > '))
+find_num = int(input('Цифра > '))
 num_as_list = [int(s) for s in list(str(num))]
-# print(num_as_list)
 
 if find_num in num_as_list:
     print('Yep!')
