@@ -169,20 +169,84 @@ from random import randint
 # print(max_value)    # выводим максимальный элемент
 # print(pos)          # позиция макс. элемента
 
-# Задача 9
-# * Найти 2 наименьших числа в массиве
+# # Задача 9
+# # * Найти 2 наименьших числа в массиве
+#
+# N = 10
+# rand_list = [randint(-10, 10) for _ in range(N)]
+#
+# min1 = rand_list[0]
+# min2 = rand_list[1]
+#
+# if min1 > min2:     # в первой переменной будет храниться самое меньшее значение, во второй следующее с конца
+#     min1, min2 = min2, min1
+#
+# # передвигаем минимальный элемент во 2 позицию, записываем новый минимальный в первую
+# for current_value in rand_list[2:]:
+#     if current_value < min1:
+#         min1, min2 = current_value, min1
+
+# # Задача 10
+# # *Дан массив целых чисел из N элементов. Найти индекс последнего минимального элемента.
+#
+# N = 30
+# rand_list = [randint(-10, 10) for _ in range(N)]
+#
+# pos = 0
+# min_value = rand_list[pos]
+#
+# for i, value in enumerate(rand_list):
+#     if value <= min_value:
+#         min_value = value
+#         pos = i
+#
+# print(pos)
+
+# # Задача 11
+# # *Подсчитать среднее арифметическое положительных и отрицательных элементов в массиве.
+#
+# N = 10
+# rand_list = [randint(-10, 10) for _ in range(N)]
+#
+# #--------------------Вариант 1--------------------
+# positive = 0
+# q_pos = 0
+# negative = 0
+# q_neg = 0
+#
+# for value in rand_list:
+#     if value > 0:
+#         positive += value
+#         q_pos += 1
+#     elif value < 0:
+#         negative += value
+#         q_neg += 1
+#
+# print(positive / q_pos)
+# print(negative / q_neg)
+#
+# # --------------------Вариант 2--------------------
+# positive = [i for i in rand_list if i > 0]
+# negative = [i for i in rand_list if i < 0]
+#
+# print(sum(positive) / len(positive))
+# print(sum(negative) / len(negative))
+
+
+# Задача 12
+# *В данном массиве найдите наибольшую серию подряд идущих элементов, расположенных по возрастанию.
 
 N = 10
-rand_list = [randint(-10, 10) for _ in range(N)]
+rand_list = [randint(0, 10) for _ in range(N)]
+cur_sequence = 1
+max_sequence = 1
 
-min1 = rand_list[0]
-min2 = rand_list[1]
+for i in range(1, len(rand_list)):
+    if rand_list[i] > rand_list[i-1]:
+        cur_sequence += 1
+    else:
+        max_sequence = cur_sequence
+        cur_sequence = 1
 
-if min1 > min2:     # в первой переменной будет храниться самое меньшее значение, во второй следующее с конца
-    min1, min2 = min2, min1
-
-# передвигаем минимальный элемент во 2 позицию, записываем новый минимальный в первую
-for current_value in rand_list[2:]:
-    if current_value < min1:
-        min1, min2 = current_value, min1
-
+print(rand_list)
+print(max_sequence)
