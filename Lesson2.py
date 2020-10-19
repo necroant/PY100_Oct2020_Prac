@@ -233,20 +233,45 @@ from random import randint
 # print(sum(negative) / len(negative))
 
 
-# Задача 12
-# *В данном массиве найдите наибольшую серию подряд идущих элементов, расположенных по возрастанию.
+# # Задача 12
+# # *В данном массиве найдите наибольшую серию подряд идущих элементов, расположенных по возрастанию.
+#
+# N = 10
+# rand_list = [randint(0, 10) for _ in range(N)]
+# cur_sequence = 1
+# max_sequence = 1
+#
+# for i in range(1, len(rand_list)):
+#     if rand_list[i] > rand_list[i-1]:
+#         cur_sequence += 1
+#     else:
+#         max_sequence = cur_sequence
+#         cur_sequence = 1
+#
+# # костыль на случай если последовательность в конце массива окажется самой длинной
+# max_sequence = cur_sequence if cur_sequence > cur_sequence else max_sequence
+#
+# print(rand_list)
+# print(max_sequence)
 
-N = 10
-rand_list = [randint(0, 10) for _ in range(N)]
-cur_sequence = 1
-max_sequence = 1
 
-for i in range(1, len(rand_list)):
-    if rand_list[i] > rand_list[i-1]:
-        cur_sequence += 1
-    else:
-        max_sequence = cur_sequence
-        cur_sequence = 1
+# Задача 13
+# *Вывести первые 3 отрицательных значения из списка
 
-print(rand_list)
-print(max_sequence)
+N = 20
+rand_list = [randint(-10, 10) for _ in range(N)]
+
+negatives = []
+
+for value in rand_list:
+    if value < 0:
+        negatives.append(value)
+        print("negative value found, appending list")
+    if len(negatives) == 3:
+        print("total of 3 negative values found, ending search")
+        break
+
+# обратите внимание - break прерывает выполнение именно цикла, и вне его не работает
+# интерпретатор подавится если написать break например в теле функции
+
+print(negatives)
