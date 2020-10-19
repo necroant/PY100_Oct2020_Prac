@@ -239,5 +239,6 @@ else:
 
 # In[ ]:
 
-
-
+# 19.10.2020 Домашнее задание:
+# https://github.com/aeksei/py100_1.git
+# loop.html
