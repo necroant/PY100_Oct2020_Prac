@@ -258,7 +258,7 @@ from random import randint
 # Задача 13
 # *Вывести первые 3 отрицательных значения из списка
 
-N = 20
+N = 6
 rand_list = [randint(-10, 10) for _ in range(N)]
 
 negatives = []
@@ -273,5 +273,8 @@ for value in rand_list:
 
 # обратите внимание - break прерывает выполнение именно цикла, и вне его не работает
 # интерпретатор подавится если написать break например в теле функции
+
+if len(negatives) < 3:
+    print("3 negatives not found, eat shit")
 
 print(negatives)
