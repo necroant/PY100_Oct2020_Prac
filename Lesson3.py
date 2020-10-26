@@ -83,13 +83,13 @@ def find_min_max_mean(n=3, m=3):
     print("Средние значения:", mean_value_rows)
 
 
-def find_min_max_mean_column(n=3, m=3):
+def find_min_max_mean_column(n=3, m=3):     # Транспозиция массива, ака выливаем воду и задача сводится к предыдушей
     """
 
-        :param n: количество строк
-        :param m: количество столбцов
-        :return:
-        """
+    :param n: количество строк
+    :param m: количество столбцов
+    :return:
+    """
 
     N = n
     M = m
@@ -97,10 +97,37 @@ def find_min_max_mean_column(n=3, m=3):
     random_matrix = [[randint(1, 9) for _ in range(M)] for _ in range(N)]
 
     print_matrix(random_matrix)
+    print()
+
+    for col in range(M):
+        for row in range(N):
+            print(random_matrix[row][col], end=" ")
+        print()
+
+
+# Работа с оператором continue
+def find_rabbits_fowl(heads=35, legs=94):
+    for ph in range(1, heads):
+        for rab in range(1, heads):
+            if ph + rab > heads:
+                break
+            elif ph + rab == heads:
+                if ph * 2 + rab * 4 != legs:
+                    continue
+                print("Кроликов:", rab)
+                print("Фазанов:", ph)
+                print("--------------")
+
+
+def one(n=3, m=3):  # единичная матрица
+    zero = [[0 if i != j else 1 for j in range(m)] for i in range(n)]
+    print_matrix(zero)
 
 
 if __name__ == '__main__':
     # find_len()
     # my_matrix(3, 3)
     # find_min_max_mean()
-    find_min_max_mean_column()
+    # find_min_max_mean_column()
+    # find_rabbits_fowl()
+    one()
