@@ -119,8 +119,13 @@ def find_rabbits_fowl(heads=35, legs=94):
                 print("--------------")
 
 
-def one(n=3, m=3):  # единичная матрица
+def one(n=3, m=3):  # главная матрица
     zero = [[0 if i != j else 1 for j in range(m)] for i in range(n)]
+    print_matrix(zero)
+
+
+def back(n=3, m=3):  # побочная диагональ
+    zero = [[0 if i + j != n - 1 else 1 for j in range(m)] for i in range(n)]
     print_matrix(zero)
 
 
@@ -130,4 +135,5 @@ if __name__ == '__main__':
     # find_min_max_mean()
     # find_min_max_mean_column()
     # find_rabbits_fowl()
-    one()
+    # one()
+    back()
