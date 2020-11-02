@@ -63,7 +63,7 @@ def find_index_cell(char, field):
 
 
 def enemy_step(char, field):
-    step(char, field)
+    return step(char, field)
 
 
 def display_field(field):
@@ -111,8 +111,10 @@ def check_sequence(list_, char):
 
     return True
 
+
 def check_win(field, char):
     victory = False
+
     for row in field:                           # Проверяем строки
         if check_sequence(row, char):
             victory = True
@@ -131,13 +133,11 @@ def check_win(field, char):
     return victory
 
 
-
-
 def display_victory_screen(field):
     for i in range(N):
         for j in range(N):
-            if field[i,j] in INIT_FIELD_SET[N]:
-                field[i,j] = EMPTY_CELL
+            if field[i, j] in INIT_FIELD_SET[N]:
+                field[i, j] = EMPTY_CELL
 
     display_field(field)
 
