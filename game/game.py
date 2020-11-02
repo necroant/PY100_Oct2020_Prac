@@ -1,26 +1,27 @@
 import numpy as np
 
 
-N = 3
-X = 'X'
-O = '0'
+N = 3       # field size
+
+FIRST_PLAYER = 'X'
+SECOND_PLAYER = '0'
 EMPTY_CELL = '.'
 
-FIELD_SET = {
-    2:(
-        '0','1',
-        '2','3'
+INIT_FIELD_SET = {
+    2: (
+        '0', '1',
+        '2', '3'
     ),
-    3:(
-        '0','1','2',
-        '3','4','5',
-        '6','7','8'
+    3: (
+        '0', '1', '2',
+        '3', '4', '5',
+        '6', '7', '8'
     ),
-    4:(
-        '0','1','2','3',
-        '4','5','6','7',
-        '8','9','A','B',
-        'C','D','E','F'
+    4: (
+        '0', '1', '2', '3',
+        '4', '5', '6', '7',
+        '8', '9', 'A', 'B',
+        'C', 'D', 'E', 'F'
     ),
 }
 
@@ -58,6 +59,7 @@ def display_field(field):
 
 
 def init_field():
+    # # Через жопу
     # field = np.full((N, N), EMPTY_CELL)
     #
     # for index, value in enumerate(FIELD_SET[N]):
@@ -65,8 +67,9 @@ def init_field():
     #     col = index % N
     #     field[row, col] = FIELD_SET[N][index]
 
-    field = np.array(FIELD_SET[N])
-    field.resize(N,N)
+    # По-человечески
+    field = np.array(INIT_FIELD_SET[N])
+    field.resize(N, N)
 
     return field
 
