@@ -6,13 +6,30 @@ X = 'X'
 O = '0'
 EMPTY_CELL = '.'
 
+CHAR_SET = {
+    2:(
+        '0','1',
+        '2','3'
+    ),
+    3:(
+        '0','1','2',
+        '3','4','5',
+        '6','7','8'
+    ),
+    4:(
+        '0','1','2','3',
+        '4','5','6','7',
+        '8','9','A','B',
+        'C','D','E','F'
+    ),
+}
 
 def get_first_step():
     ...
 
 
-def step(char):
-    ...
+def step(char, field):
+
 
 
 def enemy_step(char):
@@ -39,13 +56,9 @@ def display_field(field):
 
     print(u'┘')
 
-    print()
-
-
-
 
 def init_field():
-    field = np.full((N, N), EMPTY_CELL)
+    # field = np.full((N, N), EMPTY_CELL)
     return field
 
 
