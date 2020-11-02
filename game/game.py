@@ -6,7 +6,7 @@ X = 'X'
 O = '0'
 EMPTY_CELL = '.'
 
-CHAR_SET = {
+FIELD_SET = {
     2:(
         '0','1',
         '2','3'
@@ -29,7 +29,7 @@ def get_first_step():
 
 
 def step(char, field):
-
+    ...
 
 
 def enemy_step(char):
@@ -59,6 +59,15 @@ def display_field(field):
 
 def init_field():
     # field = np.full((N, N), EMPTY_CELL)
+    #
+    # for index, value in enumerate(FIELD_SET[N]):
+    #     row = index // N
+    #     col = index % N
+    #     field[row, col] = FIELD_SET[N][index]
+
+    field = np.array(FIELD_SET[N])
+    field.resize(N,N)
+
     return field
 
 
